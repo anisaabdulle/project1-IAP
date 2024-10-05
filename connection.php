@@ -1,6 +1,6 @@
 <?php
 class connection {
-  private $host= 'local host';
+  private $host= 'localhost';
   private $db_name= 'user-information';
   private $username='root';
   private $password= 'password';
@@ -25,28 +25,31 @@ class user {
     private $table= 'users';
 
     public $id;
-    public $name;
+    public $username;
     public $email;
     public $password;
     public $created_at;
-
+    public $twofa_code;
     public function _construct($db){
         $this->conn = $db;
     }
 
     public function create() {
-        $query = 'INSERT INTO ' . $this->table . ' (username, email, password) VALUES (:username, :email, :password)';
+        $query = 'INSERT INTO ' . $this->table . ' (username, email, password) VALUES (:username, :email, :password :twofa_code)';
         $stmt = $this->conn->prepare($query);
 
         // Sanitize inputs
         $this->username = htmlspecialchars(strip_tags($this->username));
         $this->email = htmlspecialchars(strip_tags($this->email));
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        $this->twofa_code = htmlspecialchars(strip_tags($this->twofa_code));
 
         // Bind parameters
         $stmt->bindParam(':username', $this->username);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);
+        $stmt->bindparam(':twofa_code',$this->twofa_code);
+        
 
         if ($stmt->execute()) {
             return true;

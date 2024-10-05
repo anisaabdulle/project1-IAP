@@ -10,6 +10,12 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = new User($db);
 
 
+if ($conn) {
+    echo "Connected to the database successfully.";
+} else {
+    echo "Database connection failed.";
+}
+
     // Input validation
     if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])) {
         echo 'All fields are required.';
@@ -38,4 +44,5 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     // Optionally, you can handle the case when the script is accessed without a POST request
     echo 'Please submit the form.';
 }
+
 ?>
