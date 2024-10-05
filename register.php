@@ -9,6 +9,19 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = $database->connect();
     $user = new User($db);
 
+
+    // Input validation
+    if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])) {
+        echo 'All fields are required.';
+        exit; // Stop execution if validation fails
+    }
+
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        echo 'Invalid email format.';
+        exit; // Stop execution if validation fails
+    }
+
+
     // Set user properties
     $user->username = $_POST['username'];
     $user->email = $_POST['email'];
