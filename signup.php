@@ -11,7 +11,10 @@
         <h1>Sign Up</h1>
         <form action="signup.php" method="post">
             <div class="mb-3">
-              
+            <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
             </div>
             <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -22,7 +25,7 @@
 <div id="passwordHelpBlock" class="form-text">
   Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 </div>
- 
+<button type="submit" class="btn btn-primary">register</button>
  </form>
 
 </body>

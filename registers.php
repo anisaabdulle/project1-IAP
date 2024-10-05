@@ -15,6 +15,10 @@
                 <input type="text" class="form-control" id="username" name="username" required>
     </div>
     <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
 </div>
