@@ -9,7 +9,7 @@
 <body>
     <div class=" container mt-5">
         <h1>Register</h1>
-        <form action="register.php" method="post">
+        <form action="registers.php" method="post">
             <div class="mb-3">
                 <label for="username" class="form-label">username</label> 
                 <input type="text" class="form-control" id="username" name="username" required>
@@ -25,6 +25,7 @@
     </div>
     <button type="submit" class="btn btn-primary">register</button>
         </form>
+        <p class="mt-3">Already have an account? <a href="signin.php">Sign in here</a></p>
     </div>
    
 </body>
