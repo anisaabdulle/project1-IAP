@@ -15,9 +15,9 @@
                 <input type="text" class="form-control" id="username" name="username" required>
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label" >email</label>
-        <input= type="email" class="form-control" id="email;" name="email" required>
-    </div>
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
     <div class="mb-3">
         <label for="password" class="form-label">password</label>
         <input type="password" class="form-control" id="password" name="password" required>
@@ -25,7 +25,7 @@
     </div>
     <button type="submit" class="btn btn-primary">register</button>
         </form>
-        <p class="mt-3">Already have an account? <a href="signin.php">Sign in here</a></p>
+        <p class="mt-3">Already have an account? <a href="signup.php">Sign in here</a></p>
     </div>
    
 </body>
