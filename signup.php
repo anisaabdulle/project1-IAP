@@ -25,7 +25,7 @@
 <div id="passwordHelpBlock" class="form-text">
   Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 </div>
-<button type="submit" class="btn btn-primary">register</button>
+<button type="submit" class="btn btn-primary">Sign In</button>
  </form>
 
 </body>
