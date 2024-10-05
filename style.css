@@ -1,73 +1,75 @@
 /* Style for the body and container */
 body {
-    background-color: #6f766c; /* Very light nude for a warm background */
+    background-color: #7D7F8E; /* Darker muted grey for a warm feel */
     font-family: Arial, sans-serif;
-    color: #333; /* Dark matte grey for text */
+    color: #212121; /* Very dark grey for text */
 }
 
 .container {
-    background-color: hsl(205, 12%, 46%); /* White background for the forms */
+    background-color: #D6B8C4; /* Soft muted pink background for the forms */
     padding: 30px;
     border-radius: 12px; /* Increased border radius for softer corners */
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
     max-width: 500px;
     margin: auto;
-    border: 1px solid #6e8699; /* Soft nude border around the container */
+    border: 2px solid #9E8B94; /* Darker soft grey border around the container */
 }
 
 h1 {
-    color: #2d2d2d; /* Matte dark grey for headings */
+    color: #5B3E48; /* Rich dark muted red for headings */
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* Form control styling */
 .form-label {
-    color: #4d4d4d; /* Slightly lighter grey for labels */
+    color: #5B3E48; /* Rich dark muted red for labels */
 }
 
 .form-control {
-    background-color: #5b8496; /* Very light nude for input backgrounds */
-    border: 1px solid #768189; /* Soft nude border */
+    background-color: #F2E6E9; /* Light background for input fields */
+    border: 1px solid #9E8B94; /* Darker soft grey border */
     border-radius: 6px; /* Rounded corners for input fields */
-    color: #242323; /* Dark text for readability */
+    color: #333; /* Dark text for readability */
 }
 
 .form-control:focus {
-    border-color: #80a5cc; /* Focus effect with slightly darker nude */
-    box-shadow: 0px 0px 5px rgba(204, 151, 128, 0.5); /* Subtle focus glow */
+    border-color: #5B3E48; /* Focus effect with rich dark muted red */
+    box-shadow: 0px 0px 5px rgba(91, 62, 72, 0.5); /* Subtle focus glow */
 }
+
 .btn-primary {
-    background-color: #c49380; /* Soft matte nude for primary buttons */
-    border-color: #58808f;
-    color: #55739d;
+    background-color: #5B3E48; /* Rich dark muted red for primary buttons */
+    border-color: #5B3E48; /* Same as background for a unified look */
+    color: #EDDFE0; /* Light nude for button text */
     border-radius: 6px; /* Rounded corners for buttons */
 }
 
 .btn-primary:hover {
-    background-color: #4d6480; /* Darken the button on hover */
-    border-color: #4f5f74;
+    background-color: #7D7F8E; /* Darker muted grey on hover */
+    border-color: #7D7F8E; /* Match border to hover background */
 }
 
 p {
-    color: #87919a3b; /* Grey for paragraph text */
+    color: #9E8B94; /* Dark soft grey for paragraph text */
 }
 
 a {
-    color: #a4a1a1; /* Matte red for links */
+    color: #5B3E48; /* Rich dark muted red for links */
     text-decoration: none;
 }
 
 a:hover {
-    color: #c0b4b3; /* Slightly darker red on hover */
+    color: #D6B8C4; /* Light muted pink on hover */
 }
 
 /* Password help text styling */
 .form-text {
-    color: #969393; /* Soft grey for helper text */
+    color: #9E8B94; /* Dark soft grey for helper text */
 }
 
 /* Add space between form fields */
 .mb-3 {
     margin-bottom: 20px;
 }
+
