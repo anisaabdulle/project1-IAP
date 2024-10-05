@@ -1,28 +1,28 @@
 <?php
-class connection {
-  private $host= 'localhost';
-  private $db_name= 'user-information';
-  private $username='root';
-  private $password='';
-  public $conn ;
+class Connection {
+    private $host = 'localhost';
+    private $db_name = 'user-information';
+    private $username = 'root';
+    private $password = '';
+    public $conn;
 
-  public function connect() {
-    $this->conn = null;
+    public function connect() {
+        $this->conn = null;
 
-    try {
-        $this->conn = new PDO("mysql:host={$this->host};dbname={$this->db_name}", $this->username, $this->password);
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo 'Connection Error: ' . $e->getMessage();
+        try {
+            $this->conn = new PDO("mysql:host={$this->host};dbname={$this->db_name}", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Connection Error: ' . $e->getMessage();
+        }
+
+        return $this->conn;
     }
-
-    return $this->conn;
-}
 }
 
-class user {
+class User {
     private $conn;
-    private $table= 'users';
+    private $table = 'users';
 
     public $id;
     public $username;
@@ -30,39 +30,35 @@ class user {
     public $password;
     public $created_at;
     public $twofa_code;
-    public function _construct($db){
+
+    // Constructor receives the PDO connection
+    public function __construct($db) {
         $this->conn = $db;
     }
 
     public function create() {
-        $query = 'INSERT INTO ' . $this->table . ' (username, email, password) VALUES (:username, :email, :password :twofa_code)';
+        $query = 'INSERT INTO ' . $this->table . ' (username, email, password, twofa_code) 
+                  VALUES (:username, :email, :password, :twofa_code)';
         $stmt = $this->conn->prepare($query);
 
-        // Sanitize inputs
+       
         $this->username = htmlspecialchars(strip_tags($this->username));
         $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT); // Hash the password
         $this->twofa_code = htmlspecialchars(strip_tags($this->twofa_code));
 
-        // Bind parameters
+      
         $stmt->bindParam(':username', $this->username);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);
-        $stmt->bindparam(':twofa_code',$this->twofa_code);
-        
+        $stmt->bindParam(':twofa_code', $this->twofa_code);
 
+        
         if ($stmt->execute()) {
             return true;
         }
         return false;
     }
-// Retrieve user details
-public function read() {
-    $query = 'SELECT * FROM ' . $this->table;
-    $stmt = $this->conn->prepare($query);
-    $stmt->execute();
-    return $stmt;
-
-}
 }
 ?>
+

@@ -1,6 +1,6 @@
 /* Style for the body and container */
 body {
-    background-color: #f0f0f0; /* Light grey for a subtle background */
+    background-color: #fef4e4; /* Very light nude for a warm background */
     font-family: Arial, sans-serif;
     color: #333; /* Dark matte grey for text */
 }
@@ -8,10 +8,11 @@ body {
 .container {
     background-color: #ffffff; /* White background for the forms */
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 12px; /* Increased border radius for softer corners */
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
     max-width: 500px;
     margin: auto;
+    border: 1px solid #e3b7a0; /* Soft nude border around the container */
 }
 
 h1 {
@@ -26,46 +27,13 @@ h1 {
 }
 
 .form-control {
-    background-color: #fafafa; /* Very light grey for input backgrounds */
-    border: 1px solid #c0c0c0; /* Soft border */
+    background-color: #fff4ef; /* Very light nude for input backgrounds */
+    border: 1px solid #e3b7a0; /* Soft nude border */
+    border-radius: 6px; /* Rounded corners for input fields */
     color: #333; /* Dark text for readability */
 }
 
 .form-control:focus {
-    border-color: #8c8c8c; /* Focus effect with slightly darker grey */
-    box-shadow: 0px 0px 5px rgba(140, 140, 140, 0.5); /* Subtle focus glow */
-}
-
-.btn-primary {
-    background-color: #4b6584; /* Matte navy blue for primary buttons */
-    border-color: #4b6584;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #3b5369; /* Darken the button on hover */
-    border-color: #3b5369;
-}
-
-p {
-    color: #666; /* Grey for paragraph text */
-}
-
-a {
-    color: #ff6b6b; /* Matte red for links */
-    text-decoration: none;
-}
-
-a:hover {
-    color: #d9534f; /* Slightly darker red on hover */
-}
-
-/* Password help text styling */
-.form-text {
-    color: #999; /* Soft grey for helper text */
-}
-
-/* Add space between form fields */
-.mb-3 {
-    margin-bottom: 20px;
+    border-color: #cc9780; /* Focus effect with slightly darker nude */
+    box-shadow: 0px 0px 5px rgba(204, 151, 128, 0.5); /* Subtle focus glow */
 }
